@@ -11,4 +11,4 @@ stops a bare-bones `HTTPServer` on port `8080`.
 The `handler/RequestHandler.py` is a `BaseHTTPRequestHandler` that processes 
 [HTTP Request Methods](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods). 
 The `routes` dictionary matches url [paths](https://en.wikipedia.org/wiki/URL#Syntax) 
-to `controller/Controller.py` functions.
+to `controller/Controller.py` functions. 
