@@ -1,4 +1,6 @@
 # MVC Example
+[![Build Status](https://travis-ci.org/pairing4good/mvc-python.svg?branch=main)](https://travis-ci.org/pairing4good/mvc-python)
+
 This is a bare-bones MVC example.  The intent is to avoid web frameworks 
 like [Django](https://www.djangoproject.com/).  While these type of frameworks remove the 
 need to reinvent the wheel, they often hide the details of how they actually work.  This 
