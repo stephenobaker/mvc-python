@@ -8,25 +8,19 @@ class RequestHandler(BaseHTTPRequestHandler):
     }
 
     def do_GET(self):
-        controller_method = self.lookupRoute()
-
-        output = controller_method(self)
-
-        self.write(output)
+        try:
+            controller_method = self.routes[self.path]
+            output = controller_method(self)
+            self.write(200, output)
+        except KeyError:
+            self.write(404, "Not Found")
 
     def do_POST(self):
         raise NotImplementedError
 
-    def write(self, output):
-        self.send_response_only(200)
+    def write(self, code, output):
+        self.send_response_only(code)
         self.send_header("Content-type", "text/html")
         self.end_headers()
         self.wfile.write(bytes(output, 'utf-8'))
 
-    def lookupRoute(self):
-        try:
-            controller_method = self.routes[self.path]
-        except KeyError:
-            self.send_response_only(404)
-            self.end_headers()
-        return controller_method

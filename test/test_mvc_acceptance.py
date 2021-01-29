@@ -31,6 +31,7 @@ class MvcAcceptanceTest(unittest.TestCase):
         response = requests.get(url)
 
         self.assertEqual(404, response.status_code)
+        self.assertEqual(True, response.text.__contains__("Not Found"))
 
 
 if __name__ == '__main__':
