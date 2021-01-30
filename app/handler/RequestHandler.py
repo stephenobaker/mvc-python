@@ -1,5 +1,6 @@
 from http.server import BaseHTTPRequestHandler
-from controller.Controller import Controller
+
+from app.controller.Controller import Controller
 
 
 class RequestHandler(BaseHTTPRequestHandler):
