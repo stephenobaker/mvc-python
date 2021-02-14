@@ -4,7 +4,7 @@ from http.server import HTTPServer
 
 import requests
 
-from app.handler.RequestHandler import RequestHandler
+from handler.RequestHandler import RequestHandler
 
 
 class MvcAcceptanceTest(unittest.TestCase):
