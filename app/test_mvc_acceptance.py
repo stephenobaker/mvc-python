@@ -24,7 +24,7 @@ class MvcAcceptanceTest(unittest.TestCase):
         response = requests.get(url)
 
         self.assertEqual(200, response.status_code)
-        self.assertEqual(True, response.text.__contains__("Hello World"))
+        self.assertEqual(True, response.text.__contains__("Hello World. Today is February 14, 2021."))
 
     def test__bad_path__should_return_not_found(self):
         url = "http://localhost:8080/bad"
@@ -33,6 +33,7 @@ class MvcAcceptanceTest(unittest.TestCase):
         self.assertEqual(404, response.status_code)
         self.assertEqual(True, response.text.__contains__("Not Found"))
 
+    
 
 if __name__ == '__main__':
     unittest.main()
