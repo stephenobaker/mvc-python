@@ -1,5 +1,5 @@
 import os
-
+from model.DateProvider import *
 
 class Controller:
 
@@ -9,7 +9,7 @@ class Controller:
         with open(base_path + 'hello.html', 'r') as file:
             body = file.read()
         #call model and get today's date
-        todays_date = 'February 14, 2021'
+        todays_date = getStringDate()
         body = body.replace('${todayDate}', todays_date)
         return body
 
